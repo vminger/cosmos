@@ -13,11 +13,7 @@ predict = {
             'type': 'array',
             'minItems': 1,
             'items': {
-<<<<<<< HEAD
                 'type': 'integer',
-=======
-                'type': 'float',
->>>>>>> e7d72843ac1a04fa70eb3642e105fde4d91628e1
             }
         },
     },
