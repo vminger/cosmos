@@ -17,6 +17,7 @@ from cosmos.api.controllers import base
 from cosmos.api.controllers import link
 from cosmos.api.controllers.v1 import demo
 from cosmos.api.controllers.v1 import half_plus_two
+from cosmos.api.controllers.v1 import ocr
 from cosmos.api import expose
 
 
@@ -47,8 +48,12 @@ class V1(base.APIBase):
 class Controller(rest.RestController):
     """Version 1 API controller root."""
 
+    # Demo
     demo = demo.DemoController()
     half_plus_two = half_plus_two.HalfPlusTwoController()
+
+    # OCR
+    ocr = ocr.OCRController()
 
     @expose.expose(V1)
     def get(self):

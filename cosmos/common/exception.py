@@ -69,6 +69,15 @@ class CosmosException(Exception):
         return unicode(self.args[0])
 
 
+class Conflict(CosmosException):
+    _msg_fmt = _('Conflict.')
+    code = http_client.CONFLICT
+
+
+class ServerAlreadyExists(Conflict):
+    _msg_fmt = _("HalfPlusTwo with name %(name)s already exists.")
+
+
 class ConfigInvalid(CosmosException):
     _msg_fmt = _("Invalid configuration file. %(error_msg)s")
 

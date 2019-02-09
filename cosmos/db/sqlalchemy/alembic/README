@@ -1,0 +1,12 @@
+Please see https://alembic.readthedocs.org/en/latest/index.html for general documentation
+
+To create alembic migrations use:
+$ cosmos-dbsync revision --message --autogenerate
+
+Stamp db with most recent migration version, without actually running migrations
+$ cosmos-dbsync stamp --revision head
+
+Upgrade can be performed by:
+$ cosmos-dbsync - for backward compatibility
+$ cosmos-dbsync upgrade
+# cosmos-dbsync upgrade --revision head
