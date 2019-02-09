@@ -8,8 +8,11 @@ Database setup and migration commands.
 """
 
 from oslo_config import cfg
+from oslo_db import options
 from stevedore import driver
 
+
+options.set_defaults(cfg.CONF)
 
 _IMPL = None
 

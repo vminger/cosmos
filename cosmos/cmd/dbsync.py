@@ -11,10 +11,10 @@ import sys
 
 from oslo_config import cfg
 
-from cosmos.common.conf import CONF
-from cosmos.common.db import migration
 from cosmos.common.i18n import _
 from cosmos.common import service
+from cosmos.conf import CONF
+from cosmos.db import migration
 
 
 class DBCommand(object):
@@ -78,4 +78,5 @@ def main():
     CONF.register_cli_opt(command_opt)
 
     service.prepare_service(sys.argv)
+
     CONF.command.func()
