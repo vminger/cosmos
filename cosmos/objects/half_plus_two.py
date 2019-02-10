@@ -27,15 +27,13 @@ class HalfPlusTwo(base.CosmosObject, object_base.VersionedObjectDictCompat):
 
     fields = {
         'id': object_fields.IntegerField(),
-        'uuid': object_fields.UUIDField(nullable=True),
-        'name': object_fields.StringField(nullable=True),
+        'uuid': object_fields.UUIDField(nullable=False),
+        'name': object_fields.StringField(nullable=False),
         'description': object_fields.StringField(nullable=True),
         'project_id': object_fields.UUIDField(nullable=True),
         'user_id': object_fields.UUIDField(nullable=True),
         'status': object_fields.StringField(nullable=True),
-        'launched_at': object_fields.DateTimeField(nullable=True),
         'metadata': object_fields.FlexibleDictField(nullable=True),
-        'locked_by': object_fields.StringField(nullable=True),
         'system_metadata': object_fields.FlexibleDictField(nullable=True),
     }
 

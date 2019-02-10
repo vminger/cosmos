@@ -114,12 +114,10 @@ class Connection(api.Connection):
     """SqlAlchemy connection."""
 
     def __init__(self):
-        self.QUOTA_SYNC_FUNCTIONS = {'_sync_servers': self._sync_servers,
-                                     '_sync_keypairs': self._sync_keypairs}
         pass
 
     @oslo_db_api.retry_on_deadlock
-    def server_create(self, context, values):
+    def hpt_create(self, context, values):
         if not values.get('uuid'):
             values['uuid'] = uuidutils.generate_uuid()
 

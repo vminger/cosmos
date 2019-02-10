@@ -56,7 +56,7 @@ class CosmosBase(models.TimestampMixin,
 Base = declarative_base(cls=CosmosBase)
 
 
-class Server(Base):
+class HalfPlusTwo(Base):
     """Represents possible types for servers."""
 
     __tablename__ = 'half_plus_two_t'

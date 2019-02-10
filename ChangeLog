@@ -1,6 +1,8 @@
 CHANGES
 =======
 
+* Add objects framework
+* Optimize db framework
 * Add dbsync cmd
 * Add db framework
 * Fix merge conflict

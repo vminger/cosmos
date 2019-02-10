@@ -34,5 +34,5 @@ class Connection(object):
 
     # Half plus two model.
     @abc.abstractmethod
-    def half_plus_two_create(self, context, values):
+    def hpt_create(self, context, values):
         """Create a new half_plus_two."""

@@ -13,7 +13,7 @@ from cosmos.common import config
 from cosmos.common import exception
 from cosmos.common.i18n import _
 from cosmos.conf import CONF
-#from cosmos import objects
+from cosmos import objects
 
 LOG = log.getLogger(__name__)
 
@@ -25,7 +25,7 @@ def prepare_service(argv=None):
         'eventlet.wsgi.server=INFO', 'cosmosclient=WARNING'])
     config.parse_args(argv)
     log.setup(CONF, 'cosmos')
-    #objects.register_all()
+    objects.register_all()
 
 
 def process_launcher():

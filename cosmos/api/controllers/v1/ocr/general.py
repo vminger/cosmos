@@ -9,7 +9,8 @@ from wsme import types as wtypes
 
 from cosmos.api import expose
 from cosmos.api.controllers.v1.schemas import ocr_general_schema
-from cosmos.api.cotrollers.v1 import types
+from cosmos.api.controllers.v1.views import ocr_general_view
+from cosmos.api.controllers.v1 import types
 from cosmos.api import validation
 
 

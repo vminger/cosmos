@@ -7,4 +7,4 @@
 def register_all():
     # NOTE(Tony): You must make sure your object gets imported in this
     # function in order for it to be registered by services.
-    __import__('mogan.objects.half_plus_two')
+    __import__('cosmos.objects.half_plus_two')

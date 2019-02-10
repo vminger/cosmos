@@ -6,10 +6,12 @@
 from oslo_log import log
 from oslo_utils import excutils
 from oslo_utils import importutils
+from oslo_utils import uuidutils
 
 from cosmos.common.i18n import _
 from cosmos.common import flow_utils
 from cosmos.core.flows import half_plus_two_flow
+from cosmos import objects
 
 LOG = log.getLogger(__name__)
 
@@ -22,8 +24,21 @@ class CoreManager(object):
         driver = "cosmos.core.drivers.tfserving.driver.TFServingDriver"
         self.driver = importutils.import_object(driver)
 
+    def _create_hpt(self, context, request_spec):
+        base_options = {
+            'metadata': request_spec
+        }
+
+        hpt = objects.HalfPlusTwo(context=context)
+        hpt.update(base_options)
+        hpt.uuid = uuidutils.generate_uuid()
+        hpt.name = hpt.uuid
+        hpt.create()
+
     def half_plus_two_predict(self, context, request_spec):
         LOG.debug("Model Predict") 
+
+        self._create_hpt(context, request_spec)
 
         try:
             taskflow = half_plus_two_flow.get_flow(
