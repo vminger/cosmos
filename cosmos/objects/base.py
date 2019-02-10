@@ -1,8 +1,7 @@
 # Copyright 2019 PandoraGo Co.,LTD.
 # All Rights Reserved.
 #
-# Tony 2019/2/5: Add demo object.  
-
+# Tony 2019/2/5: Add base object.  
 
 """Cosmos common internal object model"""
 
