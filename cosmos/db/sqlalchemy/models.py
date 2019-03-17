@@ -74,3 +74,23 @@ class HalfPlusTwo(Base):
     status = Column(String(255), nullable=True)
     extra = Column(db_types.JsonEncodedDict)
     system_metadata = Column(db_types.JsonEncodedDict, nullable=True)
+
+
+class OcrGeneral(Base):
+    """Represents possible types for servers."""
+
+    __tablename__ = 'ocr_general_t'
+    __table_args__ = (
+        Index('ocr_general_id_idx', 'project_id'),
+        schema.UniqueConstraint('uuid', name='uniq_halfplustwo0uuid'),
+        table_args()
+    )
+    id = Column(Integer, primary_key=True)
+    uuid = Column(String(36), nullable=False)
+    name = Column(String(255), nullable=False)
+    description = Column(String(255), nullable=True)
+    project_id = Column(String(36), nullable=True)
+    user_id = Column(String(36), nullable=True)
+    status = Column(String(255), nullable=True)
+    extra = Column(db_types.JsonEncodedDict)
+    system_metadata = Column(db_types.JsonEncodedDict, nullable=True)

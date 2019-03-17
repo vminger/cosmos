@@ -22,7 +22,7 @@ import sqlalchemy as sa
 
 def upgrade():
     op.create_table(
-        'half_plus_two',
+        'half_plus_two_t',
         sa.Column('created_at', sa.DateTime(), nullable=True),
         sa.Column('updated_at', sa.DateTime(), nullable=True),
         sa.Column('uuid', sa.String(length=36), nullable=False),
